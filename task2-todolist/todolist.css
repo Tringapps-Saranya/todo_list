@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+  }
+
+ .butn{
+    font-size: 12px;
+    border-radius: 6px;
+    background-color: darkslategray;
+    color: #fff;
+    border: none;
+    padding: 7px;
+    width: 25%;
+  }
+  
+  .close:hover {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .header {
+    background-color: cadetblue;
+    padding: 30px 40px;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .header:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+  }
+  
+  .addBtn {
+    padding: 10px;
+    width: 25%;
+    background: #d9d9d9;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+  }
+  
+  .addBtn:hover {
+    background-color: #bbb;
+  }
+  .completed{
+    background-color: red;
+  }
+  #addtask{
+    padding: 10px;
+  }
+  button{
+    cursor: pointer;
+  }
+  #mylist{
+    font-size: 20px;
+  }
+  h1{
+    margin:5px; 
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .options{
+    display: flex;
+    margin-top: 15px; 
+    gap: 15px;
+  }

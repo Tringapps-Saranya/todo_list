@@ -1,0 +1,27 @@
+
+             .border{
+                width: 400px;
+                max-width: 400px;
+                margin: auto;
+                padding: 2rem;
+                box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+                border-radius: 10px;
+                background: #7f92e759;
+              }
+              .button{
+                background-color: cornflowerblue;
+                width: 100%;
+                padding: 9px;
+                border: none;
+                color: #fff;
+                border-radius: 6px;
+              }
+              input{
+                padding: 5px;
+                border-radius: 6px;
+                border: none;
+              }
+              body{
+                text-align: center;
+                height: 100%;background:#fff;
+              }
