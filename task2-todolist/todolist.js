@@ -16,12 +16,13 @@ if(sessionStorage.getItem('login')!= undefined)
           myList.appendChild(p);
           console.log(userdetails.todolist[i].taskname);          
           if(userdetails.todolist[i].completed == "yes"){
-            p.addEventListener('click', function(){
             p.className = "l";
             p.classList.toggle('completed');
-          } );
+            
         }
-} 
+        
+}   
+save(); 
 }
 else{
   alert("You have to login first");
@@ -34,6 +35,7 @@ function addTask(){
   if(task.length==0 && task.length==''){
       alert('Please enter task name');
   }
+     console.log(1);
      let addtask={
        "taskname": task,
        "completed": "no"
@@ -58,14 +60,13 @@ function display(){
     if(userdetails.todolist[i].taskname ==  completedtask  && userdetails.todolist[i].completed == "no"){
         userdetails.todolist[i].completed = "yes";
         console.log(userdetails.todolist[i].completed);
-        save(); 
+        save();
         break;
     }
   } 
-  })
-   
-  
 
+  });
+  save(); 
 }
 
 function logout(){
@@ -91,10 +92,11 @@ function empty(){
   //alert("deleted all");
 }
 function clearComplete(){
-   if(userdetails.todolist[i].completed == "yes"){
-    var elements = document.querySelectorAll(".completed");
-    for(var x of elements){
-        x.remove();
-    }
-   }
+  var elements = document.querySelectorAll(".completed");
+  for(var x of elements){
+      x.remove();
+  }
+   var filtertask = userdetails.todolist.filter(finishtask => finishtask.completed == 'no');
+   userdetails.todolist = filtertask;
+   save();
 }
