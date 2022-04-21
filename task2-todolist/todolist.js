@@ -1,5 +1,5 @@
 var loginuser='';
-var signupusers='';
+let signupusers='';
 var finduser='';
 var userdetails='';
 $(document).ready(function(){
