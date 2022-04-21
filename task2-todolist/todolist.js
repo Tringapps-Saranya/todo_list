@@ -5,8 +5,8 @@ var userdetails='';
 $(document).ready(function(){
 if(sessionStorage.getItem('login')!= undefined)
 {
-  loginuser = JSON.parse(sessionStorage.getItem('login'));
-  signupuser = JSON.parse(localStorage.getItem('signup'));
+  let loginuser = JSON.parse(sessionStorage.getItem('login'));
+  let signupuser = JSON.parse(localStorage.getItem('signup'));
   finduser= signupuser.users.find(element => element.email==loginuser.email && element.password==element.password);
   userdetails=finduser;
 
@@ -89,7 +89,6 @@ function empty(){
   userdetails.todolist = [];
   document.getElementById('myList').innerHTML='';
   save();
-  //alert("deleted all");
 }
 function clearComplete(){
   var elements = document.querySelectorAll(".completed");
