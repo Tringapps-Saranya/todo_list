@@ -30,13 +30,15 @@
               }
               .seconddiv{
                 position: relative; 
+                left: 50px;
               }
               .buttonrow
                {
                   display: grid;
                }
               #signup{
-                  position: relative; bottom: 24px;
+                  position: relative; 
+                  bottom: 24px;
                } 
              #table{
                   margin:auto;
