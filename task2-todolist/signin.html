@@ -6,21 +6,21 @@
         <title>Sign in</title>
     </head>
     <body>
-        <div>
+        <div class="firstdiv">
         <div class="border">            
               <h1>Log in</h1>
             <form method="post" action="todolist.html" onsubmit="return signin()">
                 <table id="table"><caption></caption>
-                    <div>
+                    <div class="seconddiv">
                         <tr><th></th>
                             <td ><input  type="email" id="email"  name="email"  required placeholder="email"/></td>
                         </tr>
                         <tr><th></th>
                             <td ><input  type="password" id="password"  name="password"  required placeholder="password"/></td>
                         </tr>
-                        <tr><th></th>
+                        <tr class="buttonrow"><th></th>
                             <td><button class="button" type="submit">Submit</button></td>
-                            <td>Create a new account<a href="signup.html"> Sign up</a></td>
+                            <td id="signup">Create a new account<a href="signup.html"> Sign up</a></td>
                         </tr>
                     </div>                    
                 </table>
@@ -29,5 +29,4 @@
         </div>
     </body>
 </html>
-<script>
-</script>
+
