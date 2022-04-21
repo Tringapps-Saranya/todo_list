@@ -61,7 +61,7 @@ function display(p){
   p.classList.toggle('completed');
   var completedtask = p.innerText;
   console.log(completedtask);
-  for(list of userdetails.todolist){
+  for(let list of userdetails.todolist){
     if(list.taskname == completedtask){
       if(list.completed == "no"){
         list.completed = "yes";
@@ -85,7 +85,7 @@ function logout(){
 
 function save(){
   loginuser = JSON.parse(sessionStorage.getItem('login'));
-  signupuser = JSON.parse(localStorage.getItem('signup'));
+  signupusers = JSON.parse(localStorage.getItem('signup'));
   for(let list of signupuser.users){
     if(list.email == loginuser.email && list.password == loginuser.password)
        list.todolist= userdetails.todolist;
