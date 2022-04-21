@@ -1,4 +1,4 @@
-<html>
+<! Doctype html>
   <head>
     <link rel="stylesheet" href="todolist.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -23,48 +23,5 @@
             <button class="butn" onclick="showSavedList()">Show Saved List</button>
         </div>
     </div>
- <!-- <script>
-   var myList = document.getElementById("myList");
-function addList(){
-  var text = document.getElementById("newList").value;
-  if(text.length==0 && text.length==''){
-      alert('Please enter task name');
-  }
-  else{
-      document.getElementById("newList").value = "";
-      var p = document.createElement("p");
-      p.innerHTML=text;
-      p.className = "l";
-      p.addEventListener('click', function(){
-      p.classList.toggle('completed');
-      })
-      myList.appendChild(p);
-      }
-}
-function empty(){
-  var elements = document.querySelectorAll(".l");
-  for(var x of elements){
-      x.remove();
-  }
-}
-function clearComplete(){
-  var elements = document.querySelectorAll(".completed");
-  for(var x of elements){
-      x.remove();
-  }
-}
-function save(){
-  var signin = JSON.parse(sessionStorage.getItem('login'));
-  var signup = JSON.parse(localStorage['signup']);
-  for(let i of signup.p)
-  var saveList = document.getElementById("myList").innerHTML;
-  localStorage.setItem("saveList", JSON.stringify(saveList));
-}
-function showSavedList(){
-  var savedList = localStorage.getItem("saveList");
-  document.getElementById("myList").innerHTML = JSON.parse(savedList);
-}
-
- </script>    -->
 </body>
 </html>
