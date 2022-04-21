@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="login.css">
     </head>
     <body>    
-        <div>
+        <div class="firstdiv">
         <div class="border">           
             <h1>Sign up</h1>
             <form method="post" action="signin.html" onsubmit= "return sign_up()">
@@ -19,9 +19,9 @@
                     <tr><th></th>
                         <td><input type="password" id="password"  name="password"  required placeholder="password"/></td>
                     </tr>
-                    <tr><th></th>
+                    <tr class="buttonrow"><th></th>
                         <td><button type="submit" class="button">Submit</button></td>
-                        <td>Already have account <a href="signin.html">Sign in</a></td>
+                        <td id="signup">Already have account <a href="signin.html">Sign in</a></td>
                     </tr><th></th>
                 </table>
             </form>
