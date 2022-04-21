@@ -25,3 +25,16 @@
                 text-align: center;
                 height: 100%;background:#fff;
               }
+             .firstdiv{
+                 margin-top: 10%;
+              }
+              .seconddiv{
+                position: relative; 
+              }
+              .buttonrow
+               {
+                  display: grid;
+               }
+              #signup{
+                  position: relative; bottom: 24px;
+               } 
