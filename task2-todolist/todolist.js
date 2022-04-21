@@ -7,20 +7,22 @@ if(sessionStorage.getItem('login')!= undefined)
 {
   loginuser = JSON.parse(sessionStorage.getItem('login'));
   signupusers = JSON.parse(localStorage.getItem('signup'));
-  finduser= signupuser.users.find(element => element.email == loginuser.email && element.password == loginuser.password);
+  finduser= signupusers.users.find(element => element.email == loginuser.email && element.password == loginuser.password);
   userdetails=finduser;
-
+  
+  //To display the task when the page reloads
+  
   for(var i=0; i<userdetails.todolist.length;i++){
-        var p= document.createElement("p");
-          p.innerText= userdetails.todolist[i].taskname;
-          myList.appendChild(p);
-          console.log(userdetails.todolist[i].taskname);          
+    var p = document.createElement("p");
+    p.innerText= userdetails.todolist[i].taskname;
+    myList.appendChild(p);
+    p.className = "l";
+                 
           if(userdetails.todolist[i].completed == "yes"){
-            p.className = "l";
             p.classList.toggle('completed');
             
         }
-        
+        display(p)
 }   
 save(); 
 }
@@ -30,8 +32,10 @@ else{
 }    
 });
 
+// add the task in the localstorage
+
 function addTask(){
-  var task= document.getElementById("newList").value;
+  let task= document.getElementById("newList").value;
   if(task.length==0 && task.length==''){
       alert('Please enter task name');
   }
@@ -42,29 +46,32 @@ function addTask(){
      }
      console.log(userdetails);
      userdetails.todolist.push(addtask);
-     display();
+     document.getElementById("newList").value = "";
+     var p = document.createElement("p");
+     p.innerText= task;
+     myList.appendChild(p);
+     p.className = "l";
+     display(p);
    }
 
-function display(){
-  let task=document.getElementById("newList").value
-  document.getElementById("newList").value = "";
-  var p = document.createElement("p");
-  p.innerText= task;
-  myList.appendChild(p);
-  p.className = "l";
+// display the tasks on the page
+
+function display(p){
   p.addEventListener('click', function(){
   p.classList.toggle('completed');
   var completedtask = p.innerText;
   console.log(completedtask);
-  for(var i=0;i<userdetails.todolist.length;i++){
-    if(userdetails.todolist[i].taskname ==  completedtask  && userdetails.todolist[i].completed == "no"){
-        userdetails.todolist[i].completed = "yes";
-        console.log(userdetails.todolist[i].completed);
-        save();
-        break;
+  for(list of userdetails.todolist){
+    if(list.taskname == completedtask){
+      if(list.completed == "no"){
+        list.completed = "yes";
+      }else{
+        list.completed = "no";
+      }
+      save();
+      break;
     }
-  } 
-
+  }
   });
   save(); 
 }
@@ -73,6 +80,8 @@ function logout(){
   sessionStorage.clear();
   location.href="signin.html";
 }
+
+// After performed some functions,again store the changes on localstorage
 
 function save(){
   loginuser = JSON.parse(sessionStorage.getItem('login'));
@@ -85,11 +94,16 @@ function save(){
   console.log(signupuser);
 }
 
+// It clear the list of tasks
+
 function empty(){
   userdetails.todolist = [];
   document.getElementById('myList').innerHTML='';
   save();
 }
+
+// It clear the completed tasks
+
 function clearComplete(){
   var elements = document.querySelectorAll(".completed");
   for(var x of elements){
