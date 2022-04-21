@@ -7,7 +7,7 @@ if(sessionStorage.getItem('login')!= undefined)
 {
   loginuser = JSON.parse(sessionStorage.getItem('login'));
   signupuser = JSON.parse(localStorage.getItem('signup'));
-  finduser= signupuser.users.find(element => element.email==loginuser.email && element.password==element.password);
+  finduser= signupuser.users.find(element => element.email == loginuser.email && element.password == loginuser.password);
   userdetails=finduser;
 
   for(var i=0; i<userdetails.todolist.length;i++){
