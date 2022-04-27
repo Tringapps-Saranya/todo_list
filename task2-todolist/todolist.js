@@ -12,7 +12,7 @@ if(sessionStorage.getItem('login')!= undefined)
   
   //To display the task when the page reloads
   
-  for(var i=0; i<userdetails.todolist.length;i++){
+  for(let i in userdetails.todolist){
     var p = document.createElement("p");
     p.innerText= userdetails.todolist[i].taskname;
     myList.appendChild(p);
